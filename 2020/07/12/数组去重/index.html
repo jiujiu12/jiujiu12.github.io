@@ -20,17 +20,20 @@
     var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="tags">
-<meta property="og:url" content="http://yoursite.com/tags/index.html">
+  <meta name="description" content="数组去重的方式reduce代码实现 123456789function delDuplEle(arr)&amp;#123;    return         arr.reduce((prev, curr) &#x3D;&gt; &amp;#123;            if(prev.indexOf(curr) &#x3D;&#x3D;&#x3D; -1)&amp;#123;                prev.push(curr);">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数组去重">
+<meta property="og:url" content="http://yoursite.com/2020/07/12/%E6%95%B0%E7%BB%84%E5%8E%BB%E9%87%8D/index.html">
 <meta property="og:site_name" content="FUR">
+<meta property="og:description" content="数组去重的方式reduce代码实现 123456789function delDuplEle(arr)&amp;#123;    return         arr.reduce((prev, curr) &#x3D;&gt; &amp;#123;            if(prev.indexOf(curr) &#x3D;&#x3D;&#x3D; -1)&amp;#123;                prev.push(curr);">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2020-08-13T10:57:47.835Z">
-<meta property="article:modified_time" content="2020-08-13T10:57:47.835Z">
+<meta property="article:published_time" content="2020-07-12T01:22:18.000Z">
+<meta property="article:modified_time" content="2020-08-24T04:07:22.771Z">
 <meta property="article:author" content="Sherry">
+<meta property="article:tag" content="js面试">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://yoursite.com/tags/">
+<link rel="canonical" href="http://yoursite.com/2020/07/12/%E6%95%B0%E7%BB%84%E5%8E%BB%E9%87%8D/">
 
 
 <script id="page-configurations">
@@ -38,13 +41,12 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : false,
+    isPost : true,
     lang   : 'zh-CN'
   };
 </script>
 
-  <title>tags | FUR
-</title>
+  <title>数组去重 | FUR</title>
   
 
 
@@ -151,51 +153,116 @@
       <div class="main-inner">
         <div class="content-wrap">
           
-  
-  
 
-          <div class="content page posts-expand">
+          <div class="content post posts-expand">
             
 
     
-    
-    
-    <div class="post-block" lang="zh-CN">
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/07/12/%E6%95%B0%E7%BB%84%E5%8E%BB%E9%87%8D/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1597342962741&di=82313d50f0c3ca3b248451fc0be6cdb1&imgtype=0&src=http%3A%2F%2Fpic1.zhimg.com%2F50%2Fv2-0ba17bac502dba32e6494ffff67a9b3c_hd.jpg">
+      <meta itemprop="name" content="Sherry">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="FUR">
+    </span>
       <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          数组去重
+        </h1>
 
-<h1 class="post-title" itemprop="name headline">tags
-</h1>
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
 
-<div class="post-meta">
+              <time title="创建时间：2020-07-12 09:22:18" itemprop="dateCreated datePublished" datetime="2020-07-12T09:22:18+08:00">2020-07-12</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-08-24 12:07:22" itemprop="dateModified" datetime="2020-08-24T12:07:22+08:00">2020-08-24</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/JavaScript/" itemprop="url" rel="index"><span itemprop="name">JavaScript</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h2 id="数组去重的方式"><a href="#数组去重的方式" class="headerlink" title="数组去重的方式"></a>数组去重的方式</h2><h3 id="reduce"><a href="#reduce" class="headerlink" title="reduce"></a>reduce</h3><p>代码实现</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">delDuplEle</span>(<span class="params">arr</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> </span><br><span class="line">        arr.reduce(<span class="function">(<span class="params">prev, curr</span>) =&gt;</span> &#123;</span><br><span class="line">            <span class="keyword">if</span>(prev.indexOf(curr) === <span class="number">-1</span>)&#123;</span><br><span class="line">                prev.push(curr);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">return</span> prev;</span><br><span class="line">        &#125;,[])</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="set"><a href="#set" class="headerlink" title="set"></a>set</h4><p>代码实现</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">delDuplEle</span>(<span class="params">arr</span>)</span>&#123;</span><br><span class="line">   <span class="keyword">return</span> [...new <span class="built_in">Set</span>(arr)];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>或者</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">delDuplEle</span>(<span class="params">arr</span>)</span>&#123;</span><br><span class="line">   <span class="keyword">return</span> <span class="built_in">Array</span>.from(<span class="keyword">new</span> <span class="built_in">Set</span>(arr));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/js%E9%9D%A2%E8%AF%95/" rel="tag"><i class="fa fa-tag"></i> js面试</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/04/02/Vue%E6%8F%92%E6%A7%BD/" rel="prev" title="Vue插槽">
+      <i class="fa fa-chevron-left"></i> Vue插槽
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/08/02/CSS%E7%BB%A7%E6%89%BF/" rel="next" title="CSS继承">
+      CSS继承 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
   
 
-</div>
-
-</header>
-
-      
-      
-      
-      <div class="post-body">
-          <div class="tag-cloud">
-            <div class="tag-cloud-title">
-              目前共计 5 个标签
-            </div>
-            <div class="tag-cloud-tags">
-              <a href="/tags/CSS/" style="font-size: 30px; color: #111">CSS</a> <a href="/tags/ES6/" style="font-size: 12px; color: #ccc">ES6</a> <a href="/tags/Vue/" style="font-size: 12px; color: #ccc">Vue</a> <a href="/tags/js%E9%9D%A2%E8%AF%95/" style="font-size: 12px; color: #ccc">js面试</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 21px; color: #6f6f6f">算法</a>
-            </div>
-          </div>
-        
-      </div>
-      
-      
-      
-    </div>
-    
-
-    
-    
-    
 
 
           </div>
@@ -246,6 +313,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E7%BB%84%E5%8E%BB%E9%87%8D%E7%9A%84%E6%96%B9%E5%BC%8F"><span class="nav-number">1.</span> <span class="nav-text">数组去重的方式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#reduce"><span class="nav-number">1.1.</span> <span class="nav-text">reduce</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#set"><span class="nav-number">1.1.1.</span> <span class="nav-text">set</span></a></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
