@@ -20,19 +20,19 @@
     var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="本文介绍了ES3到ES6声明常量的方法，以及ES6中const的特点、用法以及如何选择使用const还是let声明变量。">
+  <meta name="description" content="CSS3属性">
 <meta property="og:type" content="article">
-<meta property="og:title" content="声明常量">
-<meta property="og:url" content="http://yoursite.com/2020/04/02/%E5%A3%B0%E6%98%8E%E5%B8%B8%E9%87%8F%E5%92%8Cconst/index.html">
+<meta property="og:title" content="CSS3新增属性">
+<meta property="og:url" content="http://yoursite.com/2019/08/13/CSS3/index.html">
 <meta property="og:site_name" content="ayanya">
-<meta property="og:description" content="本文介绍了ES3到ES6声明常量的方法，以及ES6中const的特点、用法以及如何选择使用const还是let声明变量。">
+<meta property="og:description" content="CSS3属性">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2020-04-02T01:10:15.000Z">
+<meta property="article:published_time" content="2019-08-13T11:40:26.000Z">
 <meta property="article:author" content="ayanya">
-<meta property="article:tag" content="ES6">
+<meta property="article:tag" content="CSS3">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://yoursite.com/2020/04/02/%E5%A3%B0%E6%98%8E%E5%B8%B8%E9%87%8F%E5%92%8Cconst/">
+<link rel="canonical" href="http://yoursite.com/2019/08/13/CSS3/">
 
 
 <script id="page-configurations">
@@ -45,7 +45,7 @@
   };
 </script>
 
-  <title>声明常量 | ayanya</title>
+  <title>CSS3新增属性 | ayanya</title>
   
 
 
@@ -166,7 +166,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/02/%E5%A3%B0%E6%98%8E%E5%B8%B8%E9%87%8F%E5%92%8Cconst/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/13/CSS3/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="https://cdn.jsdelivr.net/gh/jiujiu12/poi@1.0/4a91e404-b0b1-4d0b-89c1-5b9b02e6ff2c.png">
@@ -179,7 +179,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          声明常量
+          CSS3新增属性
         </h1>
 
         <div class="post-meta">
@@ -189,7 +189,7 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2020-04-02 09:10:15" itemprop="dateCreated datePublished" datetime="2020-04-02T09:10:15+08:00">2020-04-02</time>
+              <time title="创建时间：2019-08-13 19:40:26" itemprop="dateCreated datePublished" datetime="2019-08-13T19:40:26+08:00">2019-08-13</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
@@ -198,6 +198,15 @@
                 <span class="post-meta-item-text">更新于</span>
                 <time title="修改时间：2020-08-28 00:23:16" itemprop="dateModified" datetime="2020-08-28T00:23:16+08:00">2020-08-28</time>
               </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/CSS/" itemprop="url" rel="index"><span itemprop="name">CSS</span></a>
+                </span>
+            </span>
 
           
             <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
@@ -217,30 +226,44 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>本文介绍了ES3到ES6声明常量的方法，以及ES6中const的特点、用法以及如何选择使用const还是let声明变量。</p>
+        <blockquote>
+<p>CSS3属性</p>
+</blockquote>
 <a id="more"></a>
 
-<h3 id="ES3："><a href="#ES3：" class="headerlink" title="ES3："></a>ES3：</h3><p>​    声明常量时，直接将变量名大写表示是个常量，但是没有任何实质性的限制。</p>
-<h3 id="ES5："><a href="#ES5：" class="headerlink" title="ES5："></a>ES5：</h3><p>​    声明常量可以使用<code>Object.defineProperty()</code>设置writeable为false表示该值是个不可写的值。当 <code>writable</code> 属性设置为 <code>false</code> 时，该属性被称为“不可写的”。它不能被重新赋值。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj1 = &#123;&#125;;</span><br><span class="line"><span class="built_in">Object</span>.defineProperty(obj1,<span class="string">&#x27;es&#x27;</span>,&#123;</span><br><span class="line">    value : <span class="string">&#x27;hello&#x27;</span>,</span><br><span class="line">    writeable : <span class="string">&#x27;false&#x27;</span></span><br><span class="line">&#125;);</span><br><span class="line"><span class="built_in">console</span>.log(obj1.es);<span class="comment">//hello</span></span><br><span class="line">es = <span class="string">&#x27;es2015&#x27;</span>;</span><br><span class="line"><span class="built_in">console</span>.log(obj1.es);<span class="comment">//结果依旧是hello</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="ES6：声明常量时，使用const"><a href="#ES6：声明常量时，使用const" class="headerlink" title="ES6：声明常量时，使用const"></a>ES6：声明常量时，使用<code>const</code></h3><h4 id="const的特点"><a href="#const的特点" class="headerlink" title="const的特点"></a>const的特点</h4><ol>
-<li><p><code>const</code>定义值不能改变，用于定义常量</p>
-</li>
-<li><p><code>const</code>定义常量名不能重复</p>
-</li>
-<li><p><code>const</code>定义常量不属于window对象，不会污染全局作用域</p>
-</li>
-<li><p><code>const</code>声明以上部分存在暂时死区，不进行变量提升，更加安全，规范</p>
-</li>
-<li><p>块级作用域</p>
-</li>
-</ol>
-<h4 id="const定义的值不可变？"><a href="#const定义的值不可变？" class="headerlink" title="const定义的值不可变？"></a>const定义的值不可变？</h4><p>​    对于<code>const</code>定义的对象，由于存储的只是对象的引用，对象里的属性值是可以改变的。</p>
-<p>​    若想不改变对象里的属性值，可以使用<code>Object.freeze(obj)</code>‘冻结’这个对象。但是，这种方法只能浅层次的冻结对象，也就是说，对于对象中的对象，改变其值仍旧会发生变化，此时就需要使用递归的方式进行对象属性的全部冻结了。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">    <span class="keyword">const</span> obj = &#123;</span><br><span class="line">        name:<span class="string">&#x27;小明&#x27;</span>,</span><br><span class="line">        gendar: <span class="string">&#x27;男&#x27;</span>,</span><br><span class="line">        skills: &#123;</span><br><span class="line">            <span class="string">&#x27;学习&#x27;</span> : <span class="string">&#x27;数学&#x27;</span>,</span><br><span class="line">            <span class="string">&#x27;运动&#x27;</span> : [<span class="string">&#x27;篮球&#x27;</span>,<span class="string">&#x27;滑雪&#x27;</span>,<span class="string">&#x27;滑板&#x27;</span>],</span><br><span class="line">        &#125;,</span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">freezeObj</span>(<span class="params">obj</span>)</span>&#123;</span><br><span class="line">        <span class="built_in">Object</span>.freeze(obj);</span><br><span class="line">        <span class="built_in">Object</span>.keys(obj).forEach(<span class="function">(<span class="params">key</span>) =&gt;</span> &#123;</span><br><span class="line">            <span class="keyword">if</span>(<span class="keyword">typeof</span> obj[key] === <span class="string">&#x27;object&#x27;</span>)&#123;</span><br><span class="line">                <span class="comment">//对于对象属性，再次调用该函数进行冻结</span></span><br><span class="line">                freezeObj(obj[key]);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="comment">//调用冻结函数</span></span><br><span class="line">    freezeObj(obj);</span><br><span class="line"></span><br><span class="line">    <span class="built_in">console</span>.log(obj);</span><br><span class="line"><span class="comment">//&#123; name: &#x27;小明&#x27;,gendar: &#x27;男&#x27;, skills: &#123; &#x27;学习&#x27;: &#x27;数学&#x27;, &#x27;运动&#x27;: [ &#x27;篮球&#x27;, &#x27;滑雪&#x27;, &#x27;滑板&#x27; ] &#125; &#125;</span></span><br><span class="line">    obj[skills][学习] = <span class="string">&#x27;英语&#x27;</span>;</span><br><span class="line">    <span class="built_in">console</span>.log(obj);</span><br><span class="line"><span class="comment">//&#123; name: &#x27;小明&#x27;,gendar: &#x27;男&#x27;, skills: &#123; &#x27;学习&#x27;: &#x27;数学&#x27;, &#x27;运动&#x27;: [ &#x27;篮球&#x27;, &#x27;滑雪&#x27;, &#x27;滑板&#x27; ] &#125; &#125;</span></span><br><span class="line"></span><br><span class="line">    </span><br></pre></td></tr></table></figure>
-
-<h4 id="关于let和const的选择："><a href="#关于let和const的选择：" class="headerlink" title="关于let和const的选择："></a>关于let和const的选择：</h4><p>​    优先选择<code>const</code>，项目中，基本所有变量定义后会很少去改变。</p>
+<p>1、CSS3选择器</p>
+<p>2、CSS3边框(Borders)</p>
+<p>3、CSS3背景</p>
+<p>4、CSS3渐变</p>
+<p>5、CSS3文本效果</p>
+<p>6、CSS3字体(@font-face规则)</p>
+<p>7、CSS3转换和变形</p>
+<p>1）2D转换方法</p>
+<p>2）3D转换属性</p>
+<p>8、CSS3过度（transition属性）</p>
+<p>9、CSS3动画（@keyframes规则 animation属性）</p>
+<p>10、CSS3多列</p>
+<p>11、CSS3盒模型</p>
+<p>12、CSS3伸缩布局盒模型(弹性盒子)（flexbox）</p>
+<p>13、CSS3多媒体查询（@media）</p>
+<p>1、box-shadow（阴影效果）</p>
+<p>2、border-color（为边框设置多种颜色）</p>
+<p>3、border-image（图片边框）</p>
+<p>4、text-shadow（文本阴影）</p>
+<p>5、text-overflow（文本截断）</p>
+<p>6、word-wrap（自动换行）</p>
+<p>7、border-radius（圆角边框）</p>
+<p>8、opacity（透明度）</p>
+<p>9、box-sizing（控制盒模型的组成模式）</p>
+<p>10、resize（元素缩放）</p>
+<p>11、outline（外边框）</p>
+<p>12、background-size（指定背景图片尺寸）</p>
+<p>13、background-origin（指定背景图片从哪里开始显示）</p>
+<p>14、background-clip（指定背景图片从什么位置开始裁剪）</p>
+<p>15、background（为一个元素指定多个背景）</p>
+<p>16、hsl（通过色调、饱和度、亮度来指定颜色颜色值）</p>
+<p>17、hsla（在hsl的基础上增加透明度设置）</p>
+<p>18、rgba（基于rgb设置颜色，a设置透明度）</p>
 
     </div>
 
@@ -250,7 +273,7 @@
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/ES6/" rel="tag"><i class="fa fa-tag"></i> ES6</a>
+              <a href="/tags/CSS3/" rel="tag"><i class="fa fa-tag"></i> CSS3</a>
           </div>
 
         
@@ -259,12 +282,12 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2020/03/12/3.%E6%97%A0%E9%87%8D%E5%A4%8D%E5%AD%97%E7%AC%A6%E7%9A%84%E6%9C%80%E9%95%BF%E5%AD%97%E4%B8%B2/" rel="prev" title="无重复字符的最长字串">
-      <i class="fa fa-chevron-left"></i> 无重复字符的最长字串
+    <a href="/2019/07/09/2019-07-09-%E7%A7%BB%E9%99%A4%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E5%85%83%E7%B4%A0/" rel="prev" title="移除数组中的元素">
+      <i class="fa fa-chevron-left"></i> 移除数组中的元素
     </a></div>
       <div class="post-nav-item">
-    <a href="/2020/04/02/Vue%E6%8F%92%E6%A7%BD/" rel="next" title="Vue插槽">
-      Vue插槽 <i class="fa fa-chevron-right"></i>
+    <a href="/2019/11/02/%E4%BD%BF%E7%94%A8%E9%94%9A%E7%82%B9%E9%93%BE%E6%8E%A5%E5%AF%BC%E8%87%B4url%E9%94%99%E4%B9%B1%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/" rel="next" title="使用锚点链接导致url错乱问题解决方法">
+      使用锚点链接导致url错乱问题解决方法 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -324,7 +347,6 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#ES3%EF%BC%9A"><span class="nav-number">1.</span> <span class="nav-text">ES3：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ES5%EF%BC%9A"><span class="nav-number">2.</span> <span class="nav-text">ES5：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ES6%EF%BC%9A%E5%A3%B0%E6%98%8E%E5%B8%B8%E9%87%8F%E6%97%B6%EF%BC%8C%E4%BD%BF%E7%94%A8const"><span class="nav-number">3.</span> <span class="nav-text">ES6：声明常量时，使用const</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#const%E7%9A%84%E7%89%B9%E7%82%B9"><span class="nav-number">3.1.</span> <span class="nav-text">const的特点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#const%E5%AE%9A%E4%B9%89%E7%9A%84%E5%80%BC%E4%B8%8D%E5%8F%AF%E5%8F%98%EF%BC%9F"><span class="nav-number">3.2.</span> <span class="nav-text">const定义的值不可变？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%85%B3%E4%BA%8Elet%E5%92%8Cconst%E7%9A%84%E9%80%89%E6%8B%A9%EF%BC%9A"><span class="nav-number">3.3.</span> <span class="nav-text">关于let和const的选择：</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
