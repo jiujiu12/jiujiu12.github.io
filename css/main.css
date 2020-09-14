@@ -1168,7 +1168,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #adedaf;
+  background: #adffff;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2819,4 +2819,7 @@ span#inline-toc {
 }
 ::-webkit-scrollbar-track {
   background-color: transparent;
+}
+p {
+  text-indent: 2em;
 }

@@ -196,7 +196,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-28 00:23:16" itemprop="dateModified" datetime="2020-08-28T00:23:16+08:00">2020-08-28</time>
+                <time title="修改时间：2020-09-14 13:28:40" itemprop="dateModified" datetime="2020-09-14T13:28:40+08:00">2020-09-14</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -231,17 +231,23 @@
 </blockquote>
 <a id="more"></a>
 
-<h3 id="去重方法"><a href="#去重方法" class="headerlink" title="去重方法"></a>去重方法</h3><h4 id="reduce"><a href="#reduce" class="headerlink" title="reduce"></a>reduce</h4><p>代码实现</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">delDuplEle</span>(<span class="params">arr</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> </span><br><span class="line">        arr.reduce(<span class="function">(<span class="params">prev, curr</span>) =&gt;</span> &#123;</span><br><span class="line">            <span class="keyword">if</span>(prev.indexOf(curr) === <span class="number">-1</span>)&#123;</span><br><span class="line">                prev.push(curr);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">return</span> prev;</span><br><span class="line">        &#125;,[])</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="set"><a href="#set" class="headerlink" title="set"></a>set</h4><p>代码实现</p>
+<h3 id="去重方法"><a href="#去重方法" class="headerlink" title="去重方法"></a>去重方法</h3><h4 id="set"><a href="#set" class="headerlink" title="set"></a>set</h4><p>代码实现</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">delDuplEle</span>(<span class="params">arr</span>)</span>&#123;</span><br><span class="line">   <span class="keyword">return</span> [...new <span class="built_in">Set</span>(arr)];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>或者</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">delDuplEle</span>(<span class="params">arr</span>)</span>&#123;</span><br><span class="line">   <span class="keyword">return</span> <span class="built_in">Array</span>.from(<span class="keyword">new</span> <span class="built_in">Set</span>(arr));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h4 id="filter"><a href="#filter" class="headerlink" title="filter"></a>filter</h4><p>代码实现：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+<h4 id=""><a href="#" class="headerlink" title=""></a></h4><h4 id="reduce-indexOf"><a href="#reduce-indexOf" class="headerlink" title="reduce + indexOf"></a>reduce + indexOf</h4><p>代码实现</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">delDuplEle</span>(<span class="params">arr</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> </span><br><span class="line">        arr.reduce(<span class="function">(<span class="params">prev, curr</span>) =&gt;</span> &#123;</span><br><span class="line">            <span class="keyword">if</span>(prev.indexOf(curr) === <span class="number">-1</span>)&#123;</span><br><span class="line">                prev.push(curr);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">return</span> prev;</span><br><span class="line">        &#125;,[])</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="filter-indexOf"><a href="#filter-indexOf" class="headerlink" title="filter + indexOf"></a>filter + indexOf</h4><p>代码实现：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">delDuplEle</span>(<span class="params">arr</span>)</span>&#123;</span><br><span class="line">   <span class="keyword">return</span> arr.filter(<span class="function">(<span class="params">value, index, arr</span>) =&gt;</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> arr.indexOf(value) === index;</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="for-indexOf"><a href="#for-indexOf" class="headerlink" title="for + indexOf"></a>for + indexOf</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">delDuplEle</span>(<span class="params">arr</span>)</span>&#123;</span><br><span class="line">   <span class="keyword">let</span> newArr = [];</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; arr.length; i++)&#123;</span><br><span class="line">        <span class="keyword">if</span> (newArr.indexOf(arr[i]) === <span class="number">-1</span>)&#123;</span><br><span class="line">            newArr.push(arr[i]);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> newArr;</span><br><span class="line">&#125; </span><br></pre></td></tr></table></figure>
+
+<h3 id="对象-新数组"><a href="#对象-新数组" class="headerlink" title="对象 + 新数组"></a>对象 + 新数组</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">delDuplEle</span>(<span class="params">arr</span>)</span>&#123;</span><br><span class="line">   <span class="keyword">let</span> newArr = [], json = &#123;&#125;;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; arr.length; i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(<span class="keyword">typeof</span> json[arr[i]] == <span class="string">&#x27;undefined&#x27;</span>)&#123;</span><br><span class="line">            json[arr[i]] = <span class="literal">true</span>;</span><br><span class="line">            newArr.push(arr[i]);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> newArr;</span><br><span class="line">&#125; </span><br></pre></td></tr></table></figure>
+
+<h3 id="for-splice"><a href="#for-splice" class="headerlink" title="for + splice"></a>for + splice</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">delDuplEle</span>(<span class="params">arr</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; arr.length; i++)&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">let</span> j = i + <span class="number">1</span>; j &lt; arr.length; j++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(arr[j] == arr[i])&#123;</span><br><span class="line">                arr.splice(j, <span class="number">1</span>);</span><br><span class="line">                j--;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> arr;</span><br><span class="line">&#125; </span><br></pre></td></tr></table></figure>
 
 
 
@@ -264,8 +270,8 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2020/04/02/Vue%E6%8F%92%E6%A7%BD/" rel="prev" title="Vue插槽">
-      <i class="fa fa-chevron-left"></i> Vue插槽
+    <a href="/2020/07/08/%E9%9A%90%E5%BC%8F%E8%BD%AC%E6%8D%A2/" rel="prev" title="JS类型转换">
+      <i class="fa fa-chevron-left"></i> JS类型转换
     </a></div>
       <div class="post-nav-item">
     <a href="/2020/07/13/2020-07-13-%E6%B7%B1%E6%8B%B7%E8%B4%9D%E5%92%8C%E6%B5%85%E6%8B%B7%E8%B4%9D/" rel="next" title="深拷贝和浅拷贝">
@@ -329,7 +335,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8E%BB%E9%87%8D%E6%96%B9%E6%B3%95"><span class="nav-number">1.</span> <span class="nav-text">去重方法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#reduce"><span class="nav-number">1.1.</span> <span class="nav-text">reduce</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#set"><span class="nav-number">1.2.</span> <span class="nav-text">set</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#filter"><span class="nav-number">1.3.</span> <span class="nav-text">filter</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-number">2.</span> <span class="nav-text">总结</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8E%BB%E9%87%8D%E6%96%B9%E6%B3%95"><span class="nav-number">1.</span> <span class="nav-text">去重方法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#set"><span class="nav-number">1.1.</span> <span class="nav-text">set</span></a></li><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-number">1.2.</span> <span class="nav-text"></span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#reduce-indexOf"><span class="nav-number">1.3.</span> <span class="nav-text">reduce + indexOf</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#filter-indexOf"><span class="nav-number">1.4.</span> <span class="nav-text">filter + indexOf</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#for-indexOf"><span class="nav-number">2.</span> <span class="nav-text">for + indexOf</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AF%B9%E8%B1%A1-%E6%96%B0%E6%95%B0%E7%BB%84"><span class="nav-number">3.</span> <span class="nav-text">对象 + 新数组</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#for-splice"><span class="nav-number">4.</span> <span class="nav-text">for + splice</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-number">5.</span> <span class="nav-text">总结</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -345,20 +351,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">15</span>
+          <span class="site-state-item-count">31</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-count">12</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-count">17</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>

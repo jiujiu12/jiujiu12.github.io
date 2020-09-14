@@ -27,12 +27,13 @@
 <meta property="og:site_name" content="ayanya">
 <meta property="og:description" content="浏览器从输入URL到展示页面的过程中发生了什么？ 可以说，这个是一个比较经典的面试题，涉及许多知识，考察比较全面。">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://segmentfault.com/img/bVCZ1H?w=694&h=340">
 <meta property="og:image" content="https://uploadfiles.nowcoder.com/images/20190820/2372633_1566301443717_18FE306CD4552541575D6F28DE83D497">
 <meta property="article:published_time" content="2020-07-22T11:40:26.000Z">
 <meta property="article:author" content="ayanya">
 <meta property="article:tag" content="前端面试">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://uploadfiles.nowcoder.com/images/20190820/2372633_1566301443717_18FE306CD4552541575D6F28DE83D497">
+<meta name="twitter:image" content="https://segmentfault.com/img/bVCZ1H?w=694&h=340">
 
 <link rel="canonical" href="http://yoursite.com/2020/07/22/%E5%BC%95%E8%B5%B7%E5%9B%9E%E6%B5%81%E7%9A%84%E6%93%8D%E4%BD%9C%EF%BC%9A/">
 
@@ -198,7 +199,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-28 00:23:16" itemprop="dateModified" datetime="2020-08-28T00:23:16+08:00">2020-08-28</time>
+                <time title="修改时间：2020-09-14 13:28:40" itemprop="dateModified" datetime="2020-09-14T13:28:40+08:00">2020-09-14</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -234,11 +235,26 @@
 </blockquote>
 <a id="more"></a>
 
-
-<p>回流重绘</p>
-<p><img data-src="https://uploadfiles.nowcoder.com/images/20190820/2372633_1566301443717_18FE306CD4552541575D6F28DE83D497" alt="img"></p>
+<p>流程：</p>
+<ol>
+<li>域名解析    </li>
+<li>与服务器建立TCP连接，三次握手</li>
+<li>发送HTTP请求</li>
+<li>服务器响应HTTP请求，浏览器得到HTML代码</li>
+<li>浏览器解析代码，请求html中的资源</li>
+<li>渲染页面</li>
+</ol>
+<p>主要分为两个大步骤，包括网络和浏览器解析渲染。详细如下：</p>
+<h2 id="网络"><a href="#网络" class="headerlink" title="网络"></a>网络</h2><h2 id="浏览器解析渲染"><a href="#浏览器解析渲染" class="headerlink" title="浏览器解析渲染"></a>浏览器解析渲染</h2><h3 id="渲染过程"><a href="#渲染过程" class="headerlink" title="渲染过程"></a>渲染过程</h3><p>解析html以构建dom树 -&gt; 构建render树 -&gt; 布局render树 -&gt; 绘制render树</p>
+<p><img data-src="https://segmentfault.com/img/bVCZ1H?w=694&h=340" alt="img"></p>
+<p>　浏览器在解析<code>html</code>文件时，会”自上而下“加载，并在加载过程中进行解析渲染。在解析过程中，如果遇到请求外部资源时，如图片、外链的<code>CSS</code>、<code>iconfont</code>等，请求过程是异步的，<strong>异步下载</strong>，并不会影响<code>html</code>文档进行加载。</p>
+<p>　　<strong>解析</strong>过程中，浏览器首先会解析<code>HTML</code>文件构建<code>DOM</code>树，然后解析<code>CSS</code>文件构建渲染树，等到渲染树构建完成后，浏览器开始布局渲染树并将其绘制到屏幕上。这个过程比较复杂，涉及到两个概念: <code>reflow</code>(回流)和<code>repaint</code>(重绘)。</p>
+<p>​    <code>reflow</code>和<code>repaint</code>过程是非常消耗性能的，尤其是在移动设备上，它会破坏用户体验，有时会造成页面卡顿。所以我们应该尽可能少的减少<code>reflow</code>和<code>repaint</code>。</p>
+<p>​    遇到JS文件时，JS文件的<strong>下载和解析</strong>都会阻塞页面渲染 ，若将JS文件放在HTML文档首部，可能会造成首页白屏现象，所以，一般将<code>script</code>标签放在文档末尾。</p>
+<p>​    当然，也可以使用<code>script</code>标签的<code>defer</code>和<code>async</code>属性。两个的区别在于，第一个是按顺序执行的，第二个未必按照顺序。</p>
+<h4 id="回流重绘"><a href="#回流重绘" class="headerlink" title="回流重绘"></a>回流重绘</h4><p><img data-src="https://uploadfiles.nowcoder.com/images/20190820/2372633_1566301443717_18FE306CD4552541575D6F28DE83D497" alt="img"></p>
 <p><strong>回流reflow必将引起重绘repaint，重绘repaint未必引起回流reflow</strong></p>
-<h3 id="引起回流的操作："><a href="#引起回流的操作：" class="headerlink" title="引起回流的操作："></a>引起回流的操作：</h3><h3 id="引起重绘的操作："><a href="#引起重绘的操作：" class="headerlink" title="引起重绘的操作："></a>引起重绘的操作：</h3><p>减少回流和重绘：</p>
+<p>减少回流和重绘：</p>
 <ol>
 <li>不要用DOM操作样式，可以预先在CSS定义好样式，在需要修改样式时改变该元素的className即可</li>
 <li>不要循环访问DOM</li>
@@ -246,6 +262,7 @@
 <li>为动画的HTML使用position，fixed或者absolute；这样改变它们的CSS会大大减少reflow</li>
 <li>table的每个元素的大小以及内容的改动，都会导致整个table进行重新计算，造成大幅度的repaint或者reflow。改用div则可以进行针对性的repaint和避免不必要的reflow</li>
 </ol>
+<p>[参考][<a target="_blank" rel="noopener" href="https://www.cnblogs.com/xianyulaodi/p/6547807.html]">https://www.cnblogs.com/xianyulaodi/p/6547807.html]</a></p>
 
     </div>
 
@@ -268,8 +285,8 @@
       <i class="fa fa-chevron-left"></i> 深拷贝和浅拷贝
     </a></div>
       <div class="post-nav-item">
-    <a href="/2020/08/02/CSS%E7%BB%A7%E6%89%BF/" rel="next" title="CSS继承">
-      CSS继承 <i class="fa fa-chevron-right"></i>
+    <a href="/2020/07/23/2020-07-23-Vuex%E5%A4%8D%E4%B9%A0/" rel="next" title="Vuex复习">
+      Vuex复习 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -329,7 +346,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BC%95%E8%B5%B7%E5%9B%9E%E6%B5%81%E7%9A%84%E6%93%8D%E4%BD%9C%EF%BC%9A"><span class="nav-number">1.</span> <span class="nav-text">引起回流的操作：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BC%95%E8%B5%B7%E9%87%8D%E7%BB%98%E7%9A%84%E6%93%8D%E4%BD%9C%EF%BC%9A"><span class="nav-number">2.</span> <span class="nav-text">引起重绘的操作：</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BD%91%E7%BB%9C"><span class="nav-number">1.</span> <span class="nav-text">网络</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B5%8F%E8%A7%88%E5%99%A8%E8%A7%A3%E6%9E%90%E6%B8%B2%E6%9F%93"><span class="nav-number">2.</span> <span class="nav-text">浏览器解析渲染</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B8%B2%E6%9F%93%E8%BF%87%E7%A8%8B"><span class="nav-number">2.1.</span> <span class="nav-text">渲染过程</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9B%9E%E6%B5%81%E9%87%8D%E7%BB%98"><span class="nav-number">2.1.1.</span> <span class="nav-text">回流重绘</span></a></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -345,20 +362,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">15</span>
+          <span class="site-state-item-count">31</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-count">12</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-count">17</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
